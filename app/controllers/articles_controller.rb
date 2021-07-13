@@ -8,7 +8,10 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    if !@article.save
+    if @article.save
+      flash[:notice] = "Article created"
+      redirect_to @article
+    else
       render 'new'
     end
   end

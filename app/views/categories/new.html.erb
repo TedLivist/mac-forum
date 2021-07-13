@@ -1,0 +1,17 @@
+<% if @category.errors.any? %>
+  <% @category.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+<% end %>
+
+<%= form_with model: @category do |f| %>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name, required: true %>
+  <br><br>
+  <%= f.label :priority %>
+  <br>
+  <%= f.select :priority, Category.priorities.keys, { prompt: 'Select order of priority' }, { required: true } %>
+  <br><br>
+  <%= f.submit %>
+<% end %>
