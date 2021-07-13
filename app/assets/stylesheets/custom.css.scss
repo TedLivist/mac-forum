@@ -1,0 +1,8 @@
+.container-box {
+  grid-gap: 1px;
+}
+
+.container-box > div {
+  background-color: red;
+  height: 6rem;
+}
