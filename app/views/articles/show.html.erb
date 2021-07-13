@@ -1,8 +1,13 @@
-<% if @article.image.attached? %>
+<!-- <% if @article.image.attached? %>
   <image width="90%" height="60%" src="<%=(url_for(@article.image))%>">
-<% end %>
+<% end %> -->
 <h3><%= @article.title %></h3>
 <p><%= @article.text %></p>
 <% @article.categories.each do |category| %>
   <%= category.name %> | <%= category.priority %>
 <% end %>
+<br><br>
+<%= form_with url: article_votes_path(@article), method: :post do |f| %>
+  <%= f.submit 'Vote'%>
+<% end %>
+<%= @article.votes.count %>
