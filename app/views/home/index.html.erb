@@ -5,13 +5,15 @@
 <% end %>
 
 <% top_vote_article = Article.find(Vote.group(:article_id).count.max[0]) %>
+<!-- <image src="<%=(url_for(top_vote_article.image))%>"> -->
+
 
 <div>
-  <div class="top-image">
+  <div class="top-image" style="background-image: url(<%=(url_for(top_vote_article.image)) %>); height: 500px">
     <p><%= top_vote_article.title %></p>
   </div>
 </div>
-
+<br>
 <div class="container-box">
   <% Category.all.each do |pr| %>
     <a href="<%= category_path(pr) %>">
