@@ -14,6 +14,12 @@
 
 <div class="container-box">
   <% Category.all.each do |pr| %>
-    <div><%= pr.name %></div>
+    <a href="<%= category_path(pr) %>">
+      <div class="category-title"><%= pr.name %>
+        <% if !pr.articles.order(created_at: :desc).first.nil? %>
+          <p id="tor"><%= pr.articles.order(created_at: :desc).first.title %></p>
+        <% end %>
+      </div>
+    </a>
   <% end %>
 </div>

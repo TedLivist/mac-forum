@@ -2,7 +2,15 @@
   grid-gap: 1px;
 }
 
-.container-box > div {
+.container-box > a {
   background-color: red;
   height: 6rem;
+}
+
+.category-title {
+  text-decoration: underline;
+}
+
+#tor {
+  text-decoration: none;
 }
