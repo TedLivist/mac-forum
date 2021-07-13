@@ -1,0 +1,8 @@
+<% if @article.image.attached? %>
+  <image width="90%" height="60%" src="<%=(url_for(@article.image))%>">
+<% end %>
+<h3><%= @article.title %></h3>
+<p><%= @article.text %></p>
+<% @article.categories.each do |category| %>
+  <%= category.name %> | <%= category.priority %>
+<% end %>
