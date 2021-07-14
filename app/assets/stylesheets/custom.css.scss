@@ -1,11 +1,16 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
 .nav-bar {
   background-color: #FFFFFF;
   height: 50px;
   text-align: center;
   padding-bottom: 47px;
   border-bottom: 3px solid #847F7B;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .nav-bar a {
@@ -91,6 +96,7 @@
   top: 400px;
   font-weight: bolder;
   letter-spacing: 2px;
+  font-family: 'Merriweather', sans-serif;
 }
 
 .category-article-link {
@@ -106,6 +112,15 @@
     z-index: -1;
     object-fit: cover;
   }
+}
+
+.cat-span {
+  border-bottom: 3px solid #FAFA12;
+  font-family: 'Merriweather', serif;
+}
+
+.article-span {
+  font-family: 'Merriweather', serif;
 }
 
 .cat-container {

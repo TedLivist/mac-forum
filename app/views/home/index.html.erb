@@ -14,9 +14,9 @@
 <br>
 
 <div class="container-box">
-  <% Category.order(:priority).each do |pr| %>
-    <% latest_article = pr.articles.order(created_at: :desc).first %>
-    <a class="category-article-link" href="<%= category_path(pr) %>">
+  <% Category.order(:priority).each do |category| %>
+    <% latest_article = category.articles.order(created_at: :desc).first %>
+    <a class="category-article-link" href="<%= category_path(category) %>">
     <% if !latest_article.nil? and latest_article.image.attached? %>
       <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
     <% else %>
@@ -24,9 +24,9 @@
     <% end %>
     <!-- <%= image_tag 'messi_back.jpg', class: "category-article-image" %> -->
       <div class="category-title">
-        <p><%= pr.name %></p>
+        <p><span class="pb-1 font-weight-bold ml-2 cat-span"><%= category.name %></span></p>
         <% if !latest_article.nil? %>
-          <p><%= latest_article.title %></p>
+          <p><span class="font-weight-bold ml-2 article-span"><%= latest_article.title %></span></p>
         <% end %>
       </div>
    </a>
