@@ -1,10 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 .nav-bar {
-  background-color: springgreen;
+  background-color: #FFFFFF;
   height: 50px;
   text-align: center;
-  margin: 0 auto;
+  padding-bottom: 47px;
+  border-bottom: 3px solid #847F7B;
 }
 
 .logo {
@@ -68,9 +69,9 @@
   }
 }
 
-.top-image > p {
+.top-image > h2 {
   position: relative;
-  top: 50px;
+  top: 350px;
 }
 
 .category-article-link {
