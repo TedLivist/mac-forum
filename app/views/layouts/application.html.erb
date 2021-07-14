@@ -30,18 +30,18 @@
 
     <nav class="nav-bar navbar">
       <span class="logo">
-        <%= link_to 'HOME', root_path, class: "navbar-brand" %>
+        <%= link_to 'OLA BLOG', root_path, class: "navbar-brand" %>
       </span>
 
       <span class="mid-nav">
-        <%= link_to 'HOME', root_path, class: "mr-2" %>
+        <%= link_to 'HOME', root_path, class: "mr-2", id: "orange-color" %>
         <%= link_to 'WRITE AN ARTICLE', new_article_path %>
       </span>
 
       <span class="right-nav">
-        <%= link_to 'Login', new_user_session_path %>
-        <%= link_to 'Register', new_user_registration_path %>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to 'LOGIN', new_user_session_path %> |
+        <%= link_to 'REGISTER', new_user_registration_path %> |
+        <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
       </span>
     </nav>
     <%= yield %>

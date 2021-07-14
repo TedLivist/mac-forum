@@ -8,8 +8,25 @@
   border-bottom: 3px solid #847F7B;
 }
 
+.nav-bar a {
+  color: #847F7B;
+}
+
+.nav-bar span {
+  position: relative;
+  bottom: 10px;
+}
+
+#orange-color {
+  color: #FB894D;
+}
+
 .logo {
   float: left;
+  font-size: 40px;
+  position: relative;
+  bottom: 5px;
+  font-weight: bold;
 }
 
 .right-nav {
