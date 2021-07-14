@@ -1,12 +1,6 @@
-@import 'bootstrap/dist/css/bootstrap';
 
 <% num = Category.count %>
-<% top_vote_article = Article.find(Vote.group(:article_id).count.max[0]) %>
 
 .container-box {
-  display: grid;
-  grid-template-columns: repeat(<%= num %>, 1fr)
-}
-
-.top-image {
+  
 }

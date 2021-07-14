@@ -1,17 +1,89 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.nav-bar {
+  background-color: springgreen;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+}
+
+.right-nav {
+  float: right;
+}
+
 .container-box {
-  grid-gap: 1px;
+  display: flex;
 }
 
 .container-box > a {
-  background-color: red;
-  height: 6rem;
+  height: 14rem;
+  color: white;
+  flex-basis: 50%;
 }
 
 .category-title {
-  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 0.3rem;
+  padding-left: 0.3rem;
+  padding-bottom: 0;
 }
 
-.top-image {
-  color: red;
-  height: 70px;
+// .top-image-container {
+//   width: 100%;
+//   background-color: yellow;
+//   height: 80vh;
+// }
+
+// .top-image {
+//   color: red;
+//   height: 100%;
+//   background-repeat: no-repeat;
+//   width: 100%;
+//   background-position: center;
+//   background-size: cover;
+// }
+
+.top-image-container {
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  .top-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.top-image > p {
+  position: relative;
+  top: 50px;
+}
+
+.category-article-link {
+  text-decoration: none;
+  position: relative;
+  top: 500px;
+  .category-article-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+  }
 }
