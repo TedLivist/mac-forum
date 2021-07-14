@@ -1,0 +1,36 @@
+<% if !@category.articles.empty? %>
+  <div class="cat-container">
+    <% @category.articles.order(created_at: :desc).each do |article| %>
+      <div class="cat-article-container">
+        <div>
+          <h3><span class="border-bottom pb-2"><%= @category.name %></span></h3>
+          <p><%= article.title %><p>
+          <p><%= truncate(article.text, length: 30) %></p>
+          <p><%= article.author.username %></p>
+        </div>
+        <div>
+          <% if article.image.attached? %>
+            <image width="100%" height="450em" style="margin: 0" src="<%= url_for(article.image)%>">
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No article yet </p>
+<% end %>
+
+<div class="cat-container">
+  <div class="cat-article-container">
+    <div>Hahaha</div>
+    <div>JAJAJA</div>
+  </div>
+  <div class="cat-article-container">
+    <div>Hahaha</div>
+    <div>JAJAJA</div>
+  </div>
+  <div class="cat-article-container">
+    <div>Hahaha</div>
+    <div>JAJAJA</div>
+  </div>
+</div>

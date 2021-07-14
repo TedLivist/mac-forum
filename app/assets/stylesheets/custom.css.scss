@@ -87,3 +87,13 @@
     object-fit: cover;
   }
 }
+
+.cat-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cat-article-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
