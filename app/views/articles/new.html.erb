@@ -1,14 +1,9 @@
 <h1 class="mt-4 text-center" id="orange-color">Create a new article</h1>
 
 <div class="row justify-content-center">
-
   <div class="col-6">
 
-    <% if @article.errors.any? %>
-      <% @article.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-      <% end %>
-    <% end %>
+    <%= render 'shared/errors', obj: @article %>
 
     <%= form_with model: @article do |f| %>
       
@@ -37,7 +32,5 @@
       <%= f.submit class: "btn new-btn" %>
 
     <% end %>
-
   </div>
-  
 </div>
