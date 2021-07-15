@@ -30,14 +30,18 @@
       </span>
 
       <span class="right-nav">
-        <%= link_to 'LOGIN', new_user_session_path %> |
-        <%= link_to 'REGISTER', new_user_registration_path %> |
-        <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+        <% if !user_signed_in? %>
+          <%= link_to 'LOGIN', new_user_session_path %> |
+          <%= link_to 'REGISTER', new_user_registration_path %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+        <% end %>
       </span>
     </nav>
 
     <% if notice %>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
         <%= notice %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
