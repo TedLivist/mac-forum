@@ -17,8 +17,8 @@
 
   <section>
     <div class="container-box">
-      <% Category.order(:priority).each do |category| %>
-        <% latest_article = category.articles.order(created_at: :desc).first %>
+      <% Category.includes(:articles).order(:priority).each do |category| %>
+        <% latest_article = category.articles.last %>
         <a class="category-article-link" href="<%= category_path(category) %>">
         <% if !latest_article.nil? and latest_article.image.attached? %>
           <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
