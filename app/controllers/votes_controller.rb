@@ -10,7 +10,7 @@ class VotesController < ApplicationController
 
     if !check_vote.nil?
       flash[:alert] = 'You cannot vote twice'
-      redirect_to @article and return
+      redirect_back(fallback_location: :back) and return
     elsif add_vote.save
         flash[:notice] = 'You have voted this article'
         redirect_to @article and return

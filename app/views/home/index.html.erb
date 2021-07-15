@@ -1,5 +1,41 @@
-<h1>Haha Index Page</h1>
+<main>
+  <section>
+    <% if user_signed_in? %>
+      <h4><%= current_user.username %></h4>
+    <% end %>
+  </section>
 
-<% if user_signed_in? %>
-  <h4><%= current_user.username %></h4>
-<% end %>
+  <% top_vote_article = Article.find(Vote.group(:article_id).count.max_by{|k, v| v}[0]) %>
+  <!-- <image src="<%=(url_for(top_vote_article.image))%>"> -->
+
+  <section>
+    <div class="top-image-container">
+      <div class="top-image" style="background-image: url(<%=(url_for(top_vote_article.image)) %>); height: 500px">
+        <h2 id="orange-color" class="ml-4"><%= top_vote_article.title %></h2>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-box">
+      <% Category.order(:priority).each do |category| %>
+        <% latest_article = category.articles.order(created_at: :desc).first %>
+        <a class="category-article-link" href="<%= category_path(category) %>">
+        <% if !latest_article.nil? and latest_article.image.attached? %>
+          <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
+        <% else %>
+          <image class="category-article-image" src="<%= url_for(top_vote_article.image) %>">
+        <% end %>
+        <!-- <%= image_tag 'messi_back.jpg', class: "category-article-image" %> -->
+          <div class="category-title">
+            <p><span class="pb-1 font-weight-bold ml-2 cat-span"><%= category.name %></span></p>
+            <% if !latest_article.nil? %>
+              <p><span class="font-weight-bold ml-2 article-span"><%= latest_article.title %></span></p>
+            <% end %>
+          </div>
+      </a>
+      <% end %>
+    </div>
+  </section>
+
+</main>
