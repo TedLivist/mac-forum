@@ -13,7 +13,9 @@
           <% end %>
           <p class="mb-0 mt-2">Votes: <%= article.votes.count %></p>
           <br>
-          <%= link_to 'Delete Article', article, class: "btn btn-danger", method: :delete %>
+          <% if user_signed_in? and article.author == current_user %>
+            <%= link_to 'Delete Article', article, class: "btn btn-danger", method: :delete %>
+          <% end %>
         </div>
         <div>
           <% if article.image.attached? %>
