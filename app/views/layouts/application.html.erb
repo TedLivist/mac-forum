@@ -17,18 +17,7 @@
 
   <body class="d-flex flex-column">
 
-    <% if notice %>
-      <div class="alert alert-success alert-dismissible fade show col-md-9" role="alert">
-        <%= notice %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <%= alert %>.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <% end %>
+    <div id="page-content">
 
     <nav class="nav-bar navbar">
       <span class="logo">
@@ -46,10 +35,29 @@
         <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
       </span>
     </nav>
+
+    <% if notice %>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
     
     <%= yield %>
 
-    <footer class="nav-bar navbar" id="footer-section">
+    </div>
+
+    <footer class="nav-bar navbar" id="footer-section" id="sticky-footer">
       <span class="logo">
         <%= link_to 'OLA BLOG', root_path, class: "navbar-brand" %>
       </span>
