@@ -7,7 +7,12 @@
   <%= category.name %> | <%= category.priority %>
 <% end %>
 <br><br>
-<%= form_with url: article_votes_path(@article), method: :post do |f| %>
-  <%= f.submit 'VOTE'%>
+<% if user_signed_in? %>
+  <%= form_with url: article_votes_path(@article), method: :post do |f| %>
+    <%= f.submit 'VOTE'%>
+  <% end %>
 <% end %>
-<%= @article.votes.count %>
+Votes: <%= @article.votes.count %>
+<% if user_signed_in? and @article.author == current_user %>
+  <%= link_to 'Delete Article', @article, class: "btn btn-danger", method: :delete %>
+<% end %>

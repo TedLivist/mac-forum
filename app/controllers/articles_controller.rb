@@ -21,6 +21,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+
+    @article = Article.find(params[:id])
+
+    @article.destroy
+    flash[:alert] = 'Article has been deleted'
+    redirect_back(fallback_location: :back) and return
+  end
+
   private
 
   def article_params

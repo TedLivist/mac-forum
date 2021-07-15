@@ -9,9 +9,13 @@
           <p class="mt-3"><%= article.author.username %></p>
 
           <%= form_with url: article_votes_path(article), method: :post do |f| %>
-            <%= f.submit 'VOTE'%>
+            <%= f.submit 'VOTE', class: "btn btn-success"%>
           <% end %>
-          <%= article.votes.count %>
+          <p class="mb-0 mt-2">Votes: <%= article.votes.count %></p>
+          <br>
+          <% if user_signed_in? and article.author == current_user %>
+            <%= link_to 'Delete Article', article, class: "btn btn-danger", method: :delete %>
+          <% end %>
         </div>
         <div>
           <% if article.image.attached? %>

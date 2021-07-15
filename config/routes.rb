@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  resources :articles, only: [:new, :create, :show] do
+  resources :articles, only: [:new, :create, :show, :destroy] do
     resources :votes
   end
   resources :categories, only: [:new, :create, :show]

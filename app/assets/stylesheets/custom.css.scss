@@ -17,6 +17,10 @@
   color: #847F7B;
 }
 
+.nav-bar a:hover {
+  text-decoration: none;
+}
+
 .nav-bar > span {
   position: relative;
   bottom: 10px;
@@ -26,11 +30,22 @@
   color: #FB894D;
 }
 
+#black-color {
+  color: black;
+  position: relative;
+  bottom: 8px;
+}
+
+.footer-logo {
+  position: relative;
+  bottom: 8px;
+}
+
 .logo {
   float: left;
   font-size: 40px;
   position: relative;
-  bottom: 5px;
+  bottom: 10px;
   font-weight: bold;
 }
 
@@ -40,6 +55,10 @@
 
 .container-box {
   display: flex;
+}
+
+.new-btn {
+  background-color: orange;
 }
 
 .container-box > a {
