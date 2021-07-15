@@ -21,12 +21,15 @@
 
     <nav class="nav-bar navbar">
       <span class="logo">
-        <%= link_to 'OLA BLOG', root_path, class: "navbar-brand" %>
+        <%= link_to 'MAC FORUM', root_path, class: "navbar-brand", id: "black-color" %>
       </span>
 
       <span class="mid-nav">
         <%= link_to 'HOME', root_path, class: "mr-2", id: "orange-color" %>
         <%= link_to 'WRITE AN ARTICLE', new_article_path %>
+        <% if user_signed_in? and current_user.admin? %>
+          <%= link_to 'CREATE CATEGORY', new_category_path, class: "ml-1" %>
+        <% end %>
       </span>
 
       <span class="right-nav">
@@ -63,7 +66,7 @@
 
     <footer class="nav-bar navbar" id="footer-section" id="sticky-footer">
       <span class="logo">
-        <%= link_to 'OLA BLOG', root_path, class: "navbar-brand" %>
+        <%= link_to 'MAC FORUM', root_path, class: "navbar-brand footer-logo", id: "orange-color" %>
       </span>
 
       <span class="mid-nav">
