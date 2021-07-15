@@ -17,7 +17,7 @@
   color: #847F7B;
 }
 
-.nav-bar span {
+.nav-bar > span {
   position: relative;
   bottom: 10px;
 }
@@ -131,4 +131,22 @@
 .cat-article-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+#footer-section {
+  background-color: #4E443F;
+  color: white
+}
+
+#footer-section .logo {
+  color: white
 }
