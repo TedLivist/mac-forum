@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  before_action :check_admin, only: [:create] 
+
   def show
     @category = Category.find(params[:id])
   end
@@ -24,6 +26,19 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name, :priority)
+  end
+
+  def check_admin
+    @user = User.where(username: 'admin').take
+
+    if !@user.nil?
+      @user.toggle!(:admin) if !@user.admin?
+    end
+
+    if !current_user.admin?
+      flash[:alert] = 'Only admin can create category'
+      redirect_back(fallback_location: :back) and return
+    end
   end
 
 end
