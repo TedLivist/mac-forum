@@ -18,7 +18,7 @@ Users can create articles and delete articles. Only the admin can create a categ
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://intense-plateau-65009.herokuapp.com/)
 
 ## Getting Started
 
