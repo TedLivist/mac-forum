@@ -4,16 +4,16 @@
       <h5><%= current_user.username %> is signed in</h5>
     <% end %>
   </section>
-
-  <% top_vote_article = Article.find(Vote.group(:article_id).count.max_by{|k, v| v}[0]) %>
   
-  <section>
-    <div class="top-image-container">
-      <div class="top-image" style="background-image: url(<%=(url_for(top_vote_article.image)) %>); height: 500px">
-        <h2 id="orange-color" class="ml-4"><%= top_vote_article.title %></h2>
+  <% if @top_vote_article %>
+    <section>
+      <div class="top-image-container">
+        <div class="top-image" style="background-image: url(<%=(url_for(@top_vote_article.image)) %>); height: 500px">
+          <h2 id="orange-color" class="ml-4"><%= @top_vote_article.title %></h2>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <% end %>
 
   <section>
     <div class="container-box">
@@ -23,7 +23,7 @@
         <% if !latest_article.nil? and latest_article.image.attached? %>
           <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
         <% else %>
-          <image class="category-article-image" src="<%= url_for(top_vote_article.image) %>">
+          <image class="category-article-image" src="../../assets/images/messi_back.jpg">
         <% end %>
           <div class="category-title">
             <p><span class="pb-1 font-weight-bold ml-2 cat-span"><%= category.name %></span></p>
