@@ -20,18 +20,18 @@
       <% Category.includes(:articles).order(:priority).each do |category| %>
         <% latest_article = category.articles.last %>
         <a class="category-article-link" href="<%= category_path(category) %>">
-        <% if !latest_article.nil? and latest_article.image.attached? %>
-          <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
-        <% else %>
-          <image class="category-article-image" src="../../assets/images/messi_back.jpg">
-        <% end %>
+          <% if !latest_article.nil? and latest_article.image.attached? %>
+            <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
+          <% else %>
+            <p class="category-article-image" id="black-color">No article</p>
+          <% end %>
           <div class="category-title">
             <p><span class="pb-1 font-weight-bold ml-2 cat-span"><%= category.name %></span></p>
             <% if !latest_article.nil? %>
               <p><span class="font-weight-bold ml-2 article-span"><%= latest_article.title %></span></p>
             <% end %>
           </div>
-      </a>
+        </a>
       <% end %>
     </div>
   </section>
