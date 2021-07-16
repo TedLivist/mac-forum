@@ -1,20 +1,24 @@
 @import 'bootstrap/dist/css/bootstrap';
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
 
 .nav-bar {
-  background-color: #FFFFFF;
+  background-color: #fff;
   height: 50px;
   text-align: center;
   padding-bottom: 47px;
-  border-bottom: 3px solid #847F7B;
+  border-bottom: 3px solid #847f7b;
   font-family: 'Open Sans', sans-serif;
 }
 
 .nav-bar a {
-  color: #847F7B;
+  color: #847f7b;
+}
+
+.container-box > a {
+  height: 14rem;
+  color: white;
+  flex-basis: 50%;
 }
 
 .nav-bar a:hover {
@@ -27,7 +31,7 @@
 }
 
 #orange-color {
-  color: #FB894D;
+  color: #fb894d;
 }
 
 #black-color {
@@ -61,12 +65,6 @@
   background-color: orange;
 }
 
-.container-box > a {
-  height: 14rem;
-  color: white;
-  flex-basis: 50%;
-}
-
 .category-title {
   display: flex;
   flex-direction: column;
@@ -77,25 +75,11 @@
   padding-bottom: 0;
 }
 
-// .top-image-container {
-//   width: 100%;
-//   background-color: yellow;
-//   height: 80vh;
-// }
-
-// .top-image {
-//   color: red;
-//   height: 100%;
-//   background-repeat: no-repeat;
-//   width: 100%;
-//   background-position: center;
-//   background-size: cover;
-// }
-
 .top-image-container {
   text-decoration: none;
   position: relative;
   width: 100%;
+
   .top-image {
     background-repeat: no-repeat;
     background-position: center;
@@ -122,6 +106,7 @@
   text-decoration: none;
   position: relative;
   top: 500px;
+
   .category-article-image {
     position: absolute;
     height: 100%;
@@ -134,7 +119,7 @@
 }
 
 .cat-span {
-  border-bottom: 3px solid #FAFA12;
+  border-bottom: 3px solid #fafa12;
   font-family: 'Merriweather', serif;
 }
 
@@ -157,12 +142,12 @@ main {
 }
 
 #footer-section {
-  background-color: #4E443F;
-  color: white
+  background-color: #4e443f;
+  color: white;
 }
 
 #footer-section .logo {
-  color: white
+  color: white;
 }
 
 /* Sticky Footer Classes */
@@ -177,5 +162,5 @@ body {
 }
 
 #sticky-footer {
-  flex-shrink: none;
+  flex-shrink: 0;
 }

@@ -10,7 +10,7 @@ describe 'Sign in', type: :system do
         fill_in 'Password', with: '123456'
         click_button 'Log in'
         sleep(2)
-        expect(page).to have_content("Invalid Username or password")
+        expect(page).to have_content('Invalid Username or password')
       end
     end
   end

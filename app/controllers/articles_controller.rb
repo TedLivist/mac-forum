@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
 
-  before_action :authenticate_user!, only: [:new, :edit]
-  
   def show
     @article = Article.find(params[:id])
   end
@@ -12,9 +11,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-  
+
     if @article.save
-      flash[:notice] = "Article created"
+      flash[:notice] = 'Article created'
       redirect_to @article
     else
       render 'new'
@@ -22,7 +21,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-
     @article = Article.find(params[:id])
 
     @article.destroy
@@ -35,5 +33,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text, :image, category_ids: [])
   end
-
 end

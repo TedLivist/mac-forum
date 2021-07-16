@@ -13,5 +13,4 @@ class Article < ApplicationRecord
   validates :image, presence: true
 
   has_many :votes
-
 end
