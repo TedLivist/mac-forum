@@ -1,0 +1,18 @@
+<% if @article.image.attached? %>
+  <image width="200px" height="200px" src="<%=(url_for(@article.image))%>">
+<% end %>
+<h3><%= @article.title %></h3>
+<p><%= @article.text %></p>
+<% @article.categories.each do |category| %>
+  <%= category.name %> | <%= category.priority %>
+<% end %>
+<br><br>
+<% if user_signed_in? %>
+  <%= form_with url: article_votes_path(@article), method: :post do |f| %>
+    <%= f.submit 'VOTE'%>
+  <% end %>
+<% end %>
+Votes: <%= @article.votes.count %>
+<% if user_signed_in? and @article.author == current_user %>
+  <%= link_to 'Delete Article', @article, class: "btn btn-danger", method: :delete %>
+<% end %>

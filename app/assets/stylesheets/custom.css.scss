@@ -1,0 +1,166 @@
+@import 'bootstrap/dist/css/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
+.nav-bar {
+  background-color: #fff;
+  height: 50px;
+  text-align: center;
+  padding-bottom: 47px;
+  border-bottom: 3px solid #847f7b;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav-bar a {
+  color: #847f7b;
+}
+
+.container-box > a {
+  height: 14rem;
+  color: white;
+  flex-basis: 50%;
+}
+
+.nav-bar a:hover {
+  text-decoration: none;
+}
+
+.nav-bar > span {
+  position: relative;
+  bottom: 10px;
+}
+
+#orange-color {
+  color: #fb894d;
+}
+
+#black-color {
+  color: black;
+  position: relative;
+  bottom: 8px;
+}
+
+.footer-logo {
+  position: relative;
+  bottom: 8px;
+}
+
+.logo {
+  float: left;
+  font-size: 40px;
+  position: relative;
+  bottom: 10px;
+  font-weight: bold;
+}
+
+.right-nav {
+  float: right;
+}
+
+.container-box {
+  display: flex;
+}
+
+.new-btn {
+  background-color: orange;
+}
+
+.category-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 0.3rem;
+  padding-left: 0.3rem;
+  padding-bottom: 0;
+}
+
+.top-image-container {
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+
+  .top-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.top-image > h2 {
+  position: relative;
+  top: 400px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-family: 'Merriweather', sans-serif;
+}
+
+.category-article-link {
+  text-decoration: none;
+  position: relative;
+  top: 500px;
+
+  .category-article-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.cat-span {
+  border-bottom: 3px solid #fafa12;
+  font-family: 'Merriweather', serif;
+}
+
+.article-span {
+  font-family: 'Merriweather', serif;
+}
+
+.cat-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cat-article-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+main {
+  height: 100%;
+}
+
+#footer-section {
+  background-color: #4e443f;
+  color: white;
+}
+
+#footer-section .logo {
+  color: white;
+}
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: 0;
+}
