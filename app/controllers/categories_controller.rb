@@ -32,10 +32,10 @@ class CategoriesController < ApplicationController
     @user = User.where(username: 'admin').take
 
     unless @user.nil?
-      @user.toggle!(:admin) unless @user.admin?
+      @user.toggle!(:admin) unless @user.adminn?
     end
 
-    unless current_user.admin?
+    unless current_user.adminn?
       flash[:alert] = 'Only admin can create category'
       redirect_back(fallback_location: :back) and return
     end
