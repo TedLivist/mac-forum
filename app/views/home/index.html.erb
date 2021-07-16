@@ -23,7 +23,7 @@
         <% if !latest_article.nil? and latest_article.image.attached? %>
           <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
         <% else %>
-          <image class="category-article-image" src="<%= url_for(top_vote_article.image) %>">
+          <image class="category-article-image" src="../../assets/images/messi_back.jpg">
         <% end %>
           <div class="category-title">
             <p><span class="pb-1 font-weight-bold ml-2 cat-span"><%= category.name %></span></p>
