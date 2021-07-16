@@ -4,7 +4,7 @@
 
 > Mac Forum is an online web blog where users can join, create articles and upvote articles. The article with the highest vote gets featured on the from page
 
-![screenshot](./assets/images/scr_shot.jpg)
+![screenshot](./app/assets/images/scr_shot.jpg)
 
 This project was mainly built to demonstrate enough understanding of Rails dynamics. The homepage contains the article with the highest vote count; the different categories with each category container featuring the image of their respective recent articles.
 
