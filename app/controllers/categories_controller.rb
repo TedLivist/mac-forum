@@ -1,6 +1,7 @@
-class CategoriesController < ApplicationController
+# rubocop:disable Style/GuardClause, Style/SoleNestedConditional
 
-  before_action :check_admin, only: [:create] 
+class CategoriesController < ApplicationController
+  before_action :check_admin, only: [:create]
 
   def show
     @category = Category.find(params[:id])
@@ -12,14 +13,13 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.create(category_params)
-    
+
     if @category.save
       flash[:notice] = 'Category has been saved'
       redirect_to @category
     else
       render 'new'
     end
-
   end
 
   private
@@ -31,14 +31,15 @@ class CategoriesController < ApplicationController
   def check_admin
     @user = User.where(username: 'admin').take
 
-    if !@user.nil?
-      @user.toggle!(:admin) if !@user.admin?
+    unless @user.nil?
+      @user.toggle!(:admin) unless @user.admin?
     end
 
-    if !current_user.admin?
+    unless current_user.admin?
       flash[:alert] = 'Only admin can create category'
       redirect_back(fallback_location: :back) and return
     end
   end
-
 end
+
+# rubocop:enable Style/GuardClause, Style/SoleNestedConditional

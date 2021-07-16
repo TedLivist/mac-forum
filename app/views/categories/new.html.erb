@@ -1,17 +1,25 @@
-<% if @category.errors.any? %>
-  <% @category.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-  <% end %>
-<% end %>
+<h1 class="mt-4 text-center" id="orange-color">Create new category</h1>
 
-<%= form_with model: @category do |f| %>
-  <%= f.label :name %>
-  <br>
-  <%= f.text_field :name, required: true %>
-  <br><br>
-  <%= f.label :priority %>
-  <br>
-  <%= f.select :priority, Category.priorities.keys, { prompt: 'Select order of priority' }, { required: true } %>
-  <br><br>
-  <%= f.submit %>
-<% end %>
+<div class="row justify-content-center">
+
+  <div class="col-6">
+
+  <%= render 'shared/errors', obj: @category %>
+
+  <%= form_with model: @category do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :priority %>
+      <%= f.select :priority, Category.priorities.keys, { prompt: 'Select order of priority' }, { class: "form-control", required: true } %>
+    </div>
+
+    <%= f.submit class: "btn new-btn" %>
+  <% end %>
+
+  </div>
+
+</div>

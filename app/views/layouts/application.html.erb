@@ -10,76 +10,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-
   </head>
 
   <body class="d-flex flex-column">
-
     <div id="page-content">
-
-    <nav class="nav-bar navbar">
-      <span class="logo">
-        <%= link_to 'MAC FORUM', root_path, class: "navbar-brand", id: "black-color" %>
-      </span>
-
-      <span class="mid-nav">
-        <%= link_to 'HOME', root_path, class: "mr-2", id: "orange-color" %>
-        <%= link_to 'WRITE AN ARTICLE', new_article_path %>
-        <% if user_signed_in? and current_user.admin? %>
-          <%= link_to 'CREATE CATEGORY', new_category_path, class: "ml-1" %>
-        <% end %>
-      </span>
-
-      <span class="right-nav">
-        <% if !user_signed_in? %>
-          <%= link_to 'LOGIN', new_user_session_path %> |
-          <%= link_to 'REGISTER', new_user_registration_path %>
-        <% end %>
-        <% if user_signed_in? %>
-          <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
-        <% end %>
-      </span>
-    </nav>
-
-    <% if notice %>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <%= notice %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <%= alert %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
-    
-    <%= yield %>
-
+      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
     </div>
-
-    <footer class="nav-bar navbar" id="footer-section" id="sticky-footer">
-      <span class="logo">
-        <%= link_to 'MAC FORUM', root_path, class: "navbar-brand footer-logo", id: "orange-color" %>
-      </span>
-
-      <span class="mid-nav">
-        <span id="orange-color">Privacy Policy &middot; Terms &amp; Conditions</span> Copyright 2014. All rights reserved.
-      </span>
-
-      <span class="right-nav">
-        Connect with us:
-        <i class="fab fa-twitter fa-sm mr-2" id="orange-color"></i>
-        <i class="fab fa-instagram mr-2" id="orange-color"></i>
-        <i class="fab fa-facebook" id="orange-color"></i>
-      </span>
-    </footer>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <%= render 'layouts/footer' %>
   </body>
 </html>

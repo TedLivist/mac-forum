@@ -9,6 +9,8 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true, length: { minimum: 10 }
 
-  has_many :votes
+  validates :category_ids, presence: true
+  validates :image, presence: true
 
+  has_many :votes
 end

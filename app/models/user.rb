@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-
   validates :username, presence: true, uniqueness: true
-  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,5 +8,4 @@ class User < ApplicationRecord
   has_many :articles, foreign_key: 'author_id'
 
   has_many :votes
-
 end
