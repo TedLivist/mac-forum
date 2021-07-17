@@ -137,10 +137,6 @@
   grid-template-columns: 1fr 1fr;
 }
 
-main {
-  height: 100%;
-}
-
 #footer-section {
   background-color: #4e443f;
   color: white;
@@ -155,6 +151,7 @@ main {
 html,
 body {
   height: 100%;
+  margin-right: 0;
 }
 
 #page-content {
@@ -163,4 +160,34 @@ body {
 
 #sticky-footer {
   flex-shrink: 0;
+}
+
+.jumbotron {
+  // background-image: asset-url('blogging.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+
+.col-sm-3 {
+  padding-right: 0;
+  height: 250px;
+}
+
+.card {
+  background-image: asset-url('blogging.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100%;
+}
+
+.row {
+  margin-right: 0;
+}
+
+.card-article {
+  position: relative;
 }
