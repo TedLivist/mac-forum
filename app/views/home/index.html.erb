@@ -40,9 +40,16 @@
 
 <main>
 
-  <div class="jumbotron" style="background-image: url(<%= asset_path 'blogging.jpg' %>)">
-    <p class="text-white">Hahaha</p>
-  </div>
+  <!-- <div class="jumbotron" style="background-image: url(<%= asset_path 'blogging.jpg' %>)"> -->
+  <% unless @top_vote_article.nil? %>
+    <div class="jumbotron" style="background-image: url(<%= url_for(@top_vote_article.image) %>)">
+      <p class="text-white"><%= @top_vote_article.title %></p>
+    </div>
+  <% else %>
+    <div class="jumbotron" style="background-image: url(<%= asset_path 'blogging.jpg' %>)">
+      <p class="text-white">Hahaha</p>
+    </div>
+  <% end %>
 
   <div class="row mb-4">
     <% Category.all.limit(4).each do |category| %>
@@ -53,8 +60,7 @@
               <h5 class="card-title"><%= category.name %></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%= category.articles.last.title %></h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <%= link_to category.articles.last.title, article_path(category.articles.last), class: "card-link", id: "orange-color" %>
             </div>
           </div>
         </div>
@@ -63,10 +69,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title"><%= category.name %></h5>
-              <h6 class="card-subtitle mb-2 text-muted"><%= Article.last.title %></h6>
+              <h6 class="card-subtitle mb-2 text-muted">NO article</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
             </div>
           </div>
         </div>
