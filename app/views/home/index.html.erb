@@ -3,7 +3,7 @@
   <!-- <div class="jumbotron" style="background-image: url(<%= asset_path 'blogging.jpg' %>)"> -->
   <%= jumbo_helper(@top_vote_article) %>
   
-  <div class="row mb-4">
+  <div class="row mb-4 mr-0">
     <% Category.all.limit(4).each do |category| %>
       <%= card_helper(category, category.articles) %>
     <% end %>

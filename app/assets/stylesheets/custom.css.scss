@@ -57,84 +57,8 @@
   float: right;
 }
 
-.container-box {
-  display: flex;
-}
-
 .new-btn {
   background-color: orange;
-}
-
-.category-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding-top: 0.3rem;
-  padding-left: 0.3rem;
-  padding-bottom: 0;
-}
-
-.top-image-container {
-  text-decoration: none;
-  position: relative;
-  width: 100%;
-
-  .top-image {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    object-fit: cover;
-  }
-}
-
-.top-image > h2 {
-  position: relative;
-  top: 400px;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  font-family: 'Merriweather', sans-serif;
-}
-
-.category-article-link {
-  text-decoration: none;
-  position: relative;
-  top: 500px;
-
-  .category-article-image {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    object-fit: cover;
-  }
-}
-
-.cat-span {
-  border-bottom: 3px solid #fafa12;
-  font-family: 'Merriweather', serif;
-}
-
-.article-span {
-  font-family: 'Merriweather', serif;
-}
-
-.cat-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.cat-article-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 #footer-section {
@@ -152,6 +76,7 @@ html,
 body {
   height: 100%;
   margin-right: 0;
+  background-color: #E4E3E2;
 }
 
 #page-content {
@@ -160,73 +85,4 @@ body {
 
 #sticky-footer {
   flex-shrink: 0;
-}
-
-.jumbotron {
-  // background-image: asset-url('blogging.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 470px;
-  position: relative;
-}
-
-.jumbo-title {
-  font-weight: bold;
-  position: absolute;
-  bottom: 1rem;
-}
-
-.col-sm-3 {
-  padding-right: 0;
-  height: 260px;
-}
-
-.card {
-  // background-image: asset-url('blogging.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  height: 100%;
-}
-
-.row {
-  margin-right: 0;
-}
-
-.card-article {
-  position: relative;
-}
-
-.card-link {
-  font-weight: bold;
-  position: relative;
-  top: 140px;
-  font-size: 1.3rem;
-}
-
-.card-category {
-  border-bottom: 3px solid orange;
-  color: white;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.card-category:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-.cate-article-title {
-  font-weight: bold;
-}
-
-.article-side {
-  position: relative;  
-}
-
-.del-btn {
-  position: absolute;
-  bottom: 0;
 }

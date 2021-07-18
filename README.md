@@ -43,7 +43,7 @@ Users can create articles and delete articles. Only the admin can create a categ
 - Once the server is up, open this link `http://localhost:3000` on your browser
 
 ### Run tests
-Run `rspec` on the terminal to run the test
+Run `rspec` on the terminal to run the tests
 
 ## Authors
 

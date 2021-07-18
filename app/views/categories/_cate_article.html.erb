@@ -1,6 +1,6 @@
 <div class="cat-container">
   <% obj.articles.order(created_at: :desc).each do |article| %>
-    <div class="cat-article-container">
+    <div class="cat-article-container cat-container-color">
       <div class="px-2 article-side">
         <p class="mb-2 mt-4 cate-article-title"><%= article.title %><p>
         <p><%= simple_format(truncate(article.text, length: 50)) %></p>
