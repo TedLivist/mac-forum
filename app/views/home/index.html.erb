@@ -1,12 +1,39 @@
 <main>
-
-  <!-- <div class="jumbotron" style="background-image: url(<%= asset_path 'blogging.jpg' %>)"> -->
-  <%= jumbo_helper(@top_vote_article) %>
-  
-  <div class="row mb-4 mr-0">
-    <% Category.all.limit(4).each do |category| %>
-      <%= card_helper(category, category.articles) %>
+  <section>
+    <% if user_signed_in? %>
+      <h5><%= current_user.username %> is signed in</h5>
     <% end %>
-  </div>
+  </section>
+  
+  <% if @top_vote_article %>
+    <section>
+      <div class="top-image-container">
+        <div class="top-image" style="background-image: url(<%=(url_for(@top_vote_article.image)) %>); height: 500px">
+          <h2 id="orange-color" class="ml-4"><%= @top_vote_article.title %></h2>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <section>
+    <div class="container-box">
+      <% Category.includes(:articles).order(:priority).each do |category| %>
+        <% latest_article = category.articles.last %>
+        <a class="category-article-link" href="<%= category_path(category) %>">
+          <% if !latest_article.nil? and latest_article.image.attached? %>
+            <image class="category-article-image" src="<%= url_for(latest_article.image) %>">
+          <% else %>
+            <p class="category-article-image" id="black-color">No article</p>
+          <% end %>
+          <div class="category-title">
+            <p><span class="pb-1 font-weight-bold ml-2 cat-span"><%= category.name %></span></p>
+            <% if !latest_article.nil? %>
+              <p><span class="font-weight-bold ml-2 article-span"><%= latest_article.title %></span></p>
+            <% end %>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </section>
 
 </main>

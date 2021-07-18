@@ -12,5 +12,5 @@ class Article < ApplicationRecord
   validates :category_ids, presence: true
   validates :image, presence: true
 
-  has_many :votes, dependent: :destroy
+  has_many :votes
 end
