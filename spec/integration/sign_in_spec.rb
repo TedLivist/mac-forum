@@ -13,15 +13,14 @@ describe 'Sign in', type: :system do
       end
     end
 
-    
     context 'user details are correct' do
       it 'logs user in' do
-        User.create(username: "user", email: "user@vv.com", password: "123456", password_confirmation: "123456")
+        User.create(username: 'user', email: 'user@vv.com', password: '123456', password_confirmation: '123456')
         visit new_user_session_path
-        fill_in 'Username', with: "user"
-        fill_in 'Password', with: "123456"
+        fill_in 'Username', with: 'user'
+        fill_in 'Password', with: '123456'
         click_button 'Log in'
-        expect(page).to have_content("Signed in successfully.")
+        expect(page).to have_content('Signed in successfully.')
       end
     end
   end

@@ -10,7 +10,7 @@ describe 'Category', type: :model do
 
     context 'when no priority is provided' do
       it 'does not save' do
-        c = Category.new(name: "Fernando")
+        c = Category.new(name: 'Fernando')
         expect(c.valid?).to be(false)
       end
     end

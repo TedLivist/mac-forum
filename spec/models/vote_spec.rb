@@ -1,9 +1,11 @@
+# rubocop:disable Layout/LineLength
+
 require 'rails_helper'
 
 describe 'Vote', type: :model do
   before :each do
-    c = Category.create(name: "West", priority: :high)
-    author = User.create(username: "user_name", email: "xcv@vv.com", password: "123456", password_confirmation: "123456")
+    c = Category.create(name: 'West', priority: :high)
+    author = User.create(username: 'user_name', email: 'xcv@vv.com', password: '123456', password_confirmation: '123456')
     file = Rails.root.join('app', 'assets', 'images', 'blogging.jpg')
     image = ActiveStorage::Blob.create_and_upload!(
       io: File.open(file, 'rb'),
@@ -41,3 +43,5 @@ describe 'Vote', type: :model do
     end
   end
 end
+
+# rubocop:enable Layout/LineLength

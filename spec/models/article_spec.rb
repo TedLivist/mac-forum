@@ -1,12 +1,13 @@
+# rubocop:disable Layout/LineLength
+
 require 'rails_helper'
 
 describe 'Article', type: :model do
   before :each do
-    Category.create(name: "West", priority: :high)
-    User.create(username: "user_name", email: "xcv@vv.com", password: "123456", password_confirmation: "123456")
+    Category.create(name: 'West', priority: :high)
+    User.create(username: 'user_name', email: 'xcv@vv.com', password: '123456', password_confirmation: '123456')
   end
   describe 'Creating article' do
-    
     context 'when no title is provided' do
       it 'does not save' do
         c = Category.last
@@ -39,7 +40,7 @@ describe 'Article', type: :model do
       it 'saves' do
         c = Category.last
         u = User.last
-        
+
         file = Rails.root.join('app', 'assets', 'images', 'blogging.jpg')
         image = ActiveStorage::Blob.create_and_upload!(
           io: File.open(file, 'rb'),
@@ -52,6 +53,7 @@ describe 'Article', type: :model do
         expect(a.persisted?).to be(true)
       end
     end
-    
   end
 end
+
+# rubocop:enable Layout/LineLength
