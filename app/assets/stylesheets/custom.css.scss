@@ -167,12 +167,19 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 450px;
+  height: 470px;
+  position: relative;
+}
+
+.jumbo-title {
+  font-weight: bold;
+  position: absolute;
+  bottom: 1rem;
 }
 
 .col-sm-3 {
   padding-right: 0;
-  height: 250px;
+  height: 260px;
 }
 
 .card {
@@ -196,8 +203,12 @@ body {
   font-weight: bold;
   position: relative;
   top: 140px;
+  font-size: 1.3rem;
 }
 
 .card-category {
   border-bottom: 3px solid orange;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
 }

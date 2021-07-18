@@ -1,7 +1,7 @@
 <div class="col-sm-3">
   <div class="card" style="background-image: url(<%= asset_path 'blogging.jpg' %>)">
     <div class="card-body">
-      <h5 class="card-title"><span class="card-category"><%= obj.name %></span></h5>
+      <h5 class="card-title"><%= link_to obj.name, category_path(obj), class: "card-category" %></h5> <!-- <a class="card-category" href"#"><%= obj.name %></a></h5> -->
 
       <a href="#" class="card-link">Card link</a>
     </div>
