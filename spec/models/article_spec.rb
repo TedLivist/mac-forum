@@ -41,7 +41,7 @@ describe 'Article', type: :model do
         u = User.last
         
         file = Rails.root.join('app', 'assets', 'images', 'blogging.jpg')
-        image = ActiveStorage::Blob.create_after_upload!(
+        image = ActiveStorage::Blob.create_and_upload!(
           io: File.open(file, 'rb'),
           filename: 'blogging.jpg',
           content_type: 'image/jpg'

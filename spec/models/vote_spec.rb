@@ -5,7 +5,7 @@ describe 'Vote', type: :model do
     c = Category.create(name: "West", priority: :high)
     author = User.create(username: "user_name", email: "xcv@vv.com", password: "123456", password_confirmation: "123456")
     file = Rails.root.join('app', 'assets', 'images', 'blogging.jpg')
-    image = ActiveStorage::Blob.create_after_upload!(
+    image = ActiveStorage::Blob.create_and_upload!(
       io: File.open(file, 'rb'),
       filename: 'blogging.jpg',
       content_type: 'image/jpg'
