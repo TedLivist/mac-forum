@@ -1,0 +1,9 @@
+<div class="col-sm-3">
+  <div class="card" style="background-image: url(<%= url_for(obj.articles.last.image) %>)">
+    <div class="card-body">
+      <h5 class="card-title"><span class="card-category"><%= obj.name %></span></h5>
+      
+      <%= link_to obj.articles.last.title, article_path(obj.articles.last), class: "card-link", id: "orange-color" %>
+    </div>
+  </div>
+</div>

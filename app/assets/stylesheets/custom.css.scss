@@ -176,7 +176,7 @@ body {
 }
 
 .card {
-  background-image: asset-url('blogging.jpg');
+  // background-image: asset-url('blogging.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -194,4 +194,10 @@ body {
 
 .card-link {
   font-weight: bold;
+  position: relative;
+  top: 140px;
+}
+
+.card-category {
+  border-bottom: 3px solid orange;
 }

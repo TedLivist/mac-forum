@@ -35,6 +35,7 @@ Users can create articles and delete articles. Only the admin can create a categ
 - Clone the repo with the command: `git clone (copied link)`; like so: git clone `https://github.com/TedLivist/mac-forum.git`
 - Then run `bundle install` to install all the gems
 - Run `npm install` to install the dependencies
+- Run `yarn add bootstrap@4.3.1 jquery popper.js` to install bootstrap 4 and its jquery and popper.js dependencies
 - Run `rails db:create` to create the database.
 - Run `rails db:migrate` to run the migration files
 - Run `rails db:seed` to create pre-existing Categories in the seed file
