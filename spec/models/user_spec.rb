@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User', type: :feature do
+describe 'User', type: :model do
   describe '#create user' do
     context 'when username field is empty' do
       it 'does not save' do
