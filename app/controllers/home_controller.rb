@@ -2,7 +2,7 @@
 
 class HomeController < ApplicationController
   def index
-    if Article.count.positive?
+    if Article.count.positive? and Vote.count.positive?
       @top_vote_article = Article.find(Vote.group(:article_id).count.max_by { |_k, v| v }[0])
     else
       @top_vote_article = nil

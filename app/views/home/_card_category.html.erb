@@ -1,0 +1,11 @@
+<div class="col-sm-3 pl-1">
+  <div class="card" style="background-image: url(<%= url_for(obj.articles.last.image) %>)">
+    <div class="card-body">
+      <div class="card-title">
+        <%= link_to obj.name, category_path(obj), class: "card-category" %>
+      </div> <!-- <a class="card-category" href"#"><%= obj.name %></a></h5> -->
+      
+      <%= link_to obj.articles.last.title, article_path(obj.articles.last), class: "card-link card-article-title text-white" %>
+    </div>
+  </div>
+</div>

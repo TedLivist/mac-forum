@@ -5,7 +5,12 @@
 
   <span class="mid-nav">
     <%= link_to 'HOME', root_path, class: "mr-2", id: "orange-color" %>
-    <%= link_to 'WRITE AN ARTICLE', new_article_path %>
+    <% Category.order(:priority).all.each do |category| %>
+      <%= link_to category.name.upcase, category_path(category) %>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to '| WRITE AN ARTICLE', new_article_path %>
+    <% end %>
     <% if user_signed_in? and current_user.adminn? %>
       <%= link_to 'CREATE CATEGORY', new_category_path, class: "ml-1" %>
     <% end %>
