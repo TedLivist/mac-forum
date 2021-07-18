@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
     @article.destroy
     flash[:alert] = 'Article has been deleted'
-    redirect_back(fallback_location: :back) and return
+    redirect_to root_path
   end
 
   private
